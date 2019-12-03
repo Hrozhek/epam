@@ -11,8 +11,6 @@ public class Main {
         fullQuadraticEquation(-6, -5, -1);
         System.out.println("test x^2 = 9:");
         fullQuadraticEquation(1, 0, - 9);
-        System.out.println("test x^2 = 9:");
-        fullQuadraticEquation(1, 0, - 9);
         System.out.println("test x^2 - 4x + 4:");
         fullQuadraticEquation(1, -4, 4);
     }
@@ -26,8 +24,8 @@ public class Main {
             System.out.println("x = " + (-b / (2 * a)));
         }
         else {
-            double x1 = ((-b + Math.sqrt(discriminant))/ (2 * a));
-            double x2 = ((-b - Math.sqrt(discriminant))/ (2 * a)));
+            double x1 = (-b + Math.sqrt(discriminant))/ (2 * a);
+            double x2 = (-b - Math.sqrt(discriminant))/ (2 * a);
             System.out.println("x1 = " + x1 + ", x2 = " + x2);
         }
     }
