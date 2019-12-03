@@ -18,12 +18,16 @@ public class Main {
     }
 
     private static void fullQuadraticEquation(double a, double b, double c){
-        String answer;
         double discriminant = b * b - 4 * a * c;
-        answer = (discriminant < 0) ? "Discriminant is less than 0, there is no roots":
-                (discriminant == 0) ? ("x = " + (-b / (2 * a))) :
-                        ("x1 = " + ((-b + Math.sqrt(discriminant))/ (2 * a)) +
-                                ", x2 = " +  ((-b - Math.sqrt(discriminant))/ (2 * a)));
-        System.out.println(answer);
+        if (discriminant < 0) {
+            System.out.println("Discriminant is less than 0, there is no roots");
+        }
+        else if (discriminant == 0) {
+            System.out.println("x = " + (-b / (2 * a)));
+        }
+        else {
+            System.out.println("x1 = " + ((-b + Math.sqrt(discriminant))/ (2 * a)) +
+                ", x2 = " +  ((-b - Math.sqrt(discriminant))/ (2 * a)));
+        }
     }
 }
