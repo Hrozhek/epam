@@ -12,7 +12,7 @@ public class ObjectOrientedQuadraticEquation {
     }
 
     public void sayResult() {
-        Discriminant discriminant = new com.github.hrozhek.task2.Discriminant(a, b, c);
+        Discriminant discriminant = new Discriminant(a, b, c);
         if (discriminant.isLessThanZero()) {
             System.out.println("No solutions");
         } else {
