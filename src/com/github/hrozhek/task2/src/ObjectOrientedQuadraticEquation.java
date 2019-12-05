@@ -8,11 +8,11 @@ public class ObjectOrientedQuadraticEquation {
     public ObjectOrientedQuadraticEquation(double a, double b, double c) {
         this.a = a;
         this.b = b;
-        this.thirdKnown = c;
+        this.c = c;
     }
 
     public void sayResult() {
-        Discriminant discriminant = new Discriminant(a, b, thirdKnown);
+        Discriminant discriminant = new com.github.hrozhek.task2.Discriminant(a, b, c);
         if (discriminant.isLessThanZero()) {
             System.out.println("No solutions");
         } else {
