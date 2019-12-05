@@ -23,7 +23,6 @@ public class Discriminant {
     }
 
     public boolean isMoreThanZero() {
-
         return moreThanZero;
     }
 }
