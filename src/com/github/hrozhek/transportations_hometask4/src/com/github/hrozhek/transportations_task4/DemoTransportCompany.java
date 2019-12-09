@@ -41,7 +41,7 @@ public class DemoTransportCompany {
         transportation2.setBillTo("mr President the 2nd");
         transportation2.setCargo(macBook);
         transportation2.setCarrier(minipigExpress);
-        transportation2.setDescription("Little gist for new president");
+        transportation2.setDescription("Little gift for new president");
         transportation2.setDate(new Date(108,4,7));
         storage.add(transportation2);
 
