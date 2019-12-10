@@ -1,17 +1,17 @@
 package com.github.hrozhek.transportations_task4;
 
 public class Storage {
-    private static final byte ERROR = -1;
+    private static final float FILLING_COEFFICIENT = 0.8f;
+    private static final int STARTING_SIZE = 10;
     private static int position = 0;
-    private int size;
+    private int size = STARTING_SIZE;
     private TransportationObject[] storage;
 
-    public Storage(int size) {
-        this.size = size;
+    public Storage() {
         this.storage = new TransportationObject[size];
     }
 
-    public void print(int position) {
+    public void printElement(int position) {
         if (position > size || position < 0) {
             System.out.println("Position is out of range");
         } else {
@@ -19,18 +19,23 @@ public class Storage {
         }
     }
 
-    public int add(TransportationObject element) {
-        if (position < size) {
+    public void add(TransportationObject element) {
+        if (position < size * FILLING_COEFFICIENT) {
             storage[position++] = element;
-            return position;
         } else {
-            return ERROR;
+            size *= 2;
+            TransportationObject [] newStorage = new TransportationObject[size];
+            for (int i = 0; i < storage.length; i ++) {
+                newStorage[i] = storage[i];
+            }
+            storage = newStorage;
+            storage[position++] = element;
         }
     }
 
     public void printAllCargo() {
         for (TransportationObject cargo : storage) {
-            if (Cargo.class.equals(cargo.getClass())) {
+            if (cargo != null && Cargo.class.equals(cargo.getClass())) {
                 System.out.println(cargo);
             }
         }
@@ -38,7 +43,7 @@ public class Storage {
 
     public void printAllCarriers() {
         for (TransportationObject carrier : storage) {
-            if (Carrier.class.equals(carrier.getClass())) {
+            if (carrier != null && Carrier.class.equals(carrier.getClass())) {
                 System.out.println(carrier);
             }
         }
@@ -46,7 +51,7 @@ public class Storage {
 
     public void printAllTransportations() {
         for (TransportationObject transportation : storage) {
-            if (Transportation.class.equals(transportation.getClass())) {
+            if (transportation != null && Transportation.class.equals(transportation.getClass())) {
                 System.out.println(transportation);
             }
         }
