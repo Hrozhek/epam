@@ -24,8 +24,8 @@ public class Storage {
             storage[position++] = element;
         } else {
             size *= 2;
-            TransportationObject [] newStorage = new TransportationObject[size];
-            for (int i = 0; i < storage.length; i ++) {
+            TransportationObject[] newStorage = new TransportationObject[size];
+            for (int i = 0; i < storage.length; i++) {
                 newStorage[i] = storage[i];
             }
             storage = newStorage;
