@@ -1,6 +1,6 @@
 package com.github.hrozhek.transportations_task4;
 
-public class TransportationObject {
+public class BaseDomain {
     protected Long id;
 
     @Override
